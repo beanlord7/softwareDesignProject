@@ -14,7 +14,7 @@ Design a system to automate resume screening. Extract key details (skills, educa
 - **MVP Approach**: Build a minimal version first (e.g., keyword matching) before advancing to NLP models.
     
 - **The system does not require to have a Graphical User Interface (GUI)**
-    
+
 
 **Objective** This project focuses on designing an automated system to solve real-world challenges in recruitment. It emphasises critical thinking, data processing, and optimisation to improve hiring workflows.
 
@@ -36,11 +36,11 @@ A prototype application or wireframes demonstrating:
     
 - Key features, including:
     
-- Extracting resume details.
+    - Extracting resume details.
     
-- Matching candidates to requirements.
+    - Matching candidates to requirements.
     
-- Ranking results.
+    - Ranking results.
     
 
 ## **Requirements**
@@ -83,14 +83,14 @@ A prototype application or wireframes demonstrating:
 
 ## **Suggestions**
 
-### **Tools** **Selection****:**
+### **Tools** **Selection:**
 
 - Use spaCy or OpenNLP for named entity recognition and key phrase extraction.
     
 - Libraries like PyPDF2 or Apache Tika can handle document parsing for PDFs and DOCX files.
     
 
-### **Dataset****:**
+### **Dataset:**
 
 - Use publicly available resume datasets or generate synthetic resumes for testing.
     
@@ -182,7 +182,7 @@ A prototype application or wireframes demonstrating:
 - Uploaded text or PDF files.
     
 
-### **Text Extraction and Preprocessing****:**
+### **Text Extraction and Preprocessing:**
 
 - Parse and clean the text from input sources using:
     
@@ -223,7 +223,7 @@ A prototype application or wireframes demonstrating:
 
 ## **Suggestions**
 
-### **Tool Selection****:**
+### **Tool Selection:**
 
 - Use Java libraries like:
     
@@ -236,7 +236,7 @@ A prototype application or wireframes demonstrating:
 - Optional: Integrate pre-trained transformer models (e.g., BERT) using Java frameworks like Deep Java Library (DJL).
     
 
-### **Dataset****:**
+### **Dataset:**
 
 - Collect publicly available news articles from:
     
@@ -293,8 +293,8 @@ For example, if you are in a team of five students you should submit a report eq
 **Submission Deadline: by  14:00 on Friday 28 February 2025.**
 ### Intended learning outcomes for the assessment
 
-|     |                                                             |                                                                                                                                                                                                                                                                        |
-| --- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     ||     |
+| --- | ---- | ----- |
 | 1   | Knowledge and Understanding                                 | Use a range of techniques for problem decomposition, decision modelling and algorithm design such that, within a simple problem description, appropriate variables, decisions and repetitive actions can be identified and translated into appropriate code constructs |
 | 3   | Intellectual, practical, affective and transferrable skills | To select appropriate tools and techniques to analyse and design solutions to specific simple scenarios                                                                                                                                                                |
 | 5   | Intellectual, practical, affective and transferrable skills | To work effectively as a team player, understand different roles within a team and how to administrate effectively within that role                                                                                                                                    |
@@ -374,6 +374,7 @@ Feedback will be provided on Canvas and you will be able to view this feedback a
 | **pseudocode**            |                                                                       |     |       |
 | **flowcharts**            |                                                                       |     |       |
 | **document / formatting** | 1. has to be a MS Word document.<br>2. table of contents and figures. |     |       |
+| **presentation slides** | 
 
 ## project requirements
 >[!NOTE] description
@@ -396,3 +397,7 @@ Feedback will be provided on Canvas and you will be able to view this feedback a
 > [!NOTE] description
 > References must be in the correct .[“ARU Harvard” referencing system](https://library.aru.ac.uk/referencing/harvard.htm).
 
+## presentation / slides
+
+> [!NOTE] description
+> There should be no more than 10 slides (e.g., Front slide mentioning project title, and group members name and ID, Presentation outline, individual contributions- at least 1 slide for the team member and finally a concluding slide- thank you! slide)
