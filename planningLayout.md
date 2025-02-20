@@ -136,39 +136,60 @@ Feedback will be provided on Canvas and you will be able to view this feedback a
 - course name
 - module code
 - SID (of one student, everyone should have their own identical copy with their SIDs)
-- "Assignment Element 010"
+- "Assignment Element 010-1 Component Coursework Project Proposal"
 - ARU logo
-## tables of contents / figures etc as required
->[!info] description
->no description provided
+## document body and formatting (not a chapter)
+>[!info] requirements:
+> - [x] needs to be a PDF file formatted properly (ideally a $LaTeX$ file, but markdown will do just fine.)
+> - [ ] cover page.
+> - [ ] ARU logo
+> - [ ] watermark?
+> - [x] table of contents.
+> - [x] page numbering.
+> - [ ] reference page.
 
 ## task allocation list
 >[!info] description
 >A table containing the SID number of each student with an indication of which sections of the project design each student completed must be included.
-#### members
+#### final table format
 
-| team member  | SID     | email                    |
-| ------------ | ------- | ------------------------ |
-| **Muhammad** | 2361648 | mu319@student.aru.ac.uk  |
-| **Micheal**  | 2411228 | omf115@student.aru.ac.uk |
-| **Gedas**    | 2410684 | gk544@student.aru.ac.uk  |
+| team member<br>*(delete this later)* | SID     | tasks                                                                                     | completed? |
+| ------------------------------------ | ------- | ----------------------------------------------------------------------------------------- | ---------- |
+| **Muhammad**                         | 2361648 | Navigation Maps<br>Pseudocode<br>Flow Charts                                              |            |
+| **Micheal**                          | 2411228 | Prototype<br>Use Case Diagrams<br>Usability                                               |            |
+| **Gedas**                            | 2410684 | Cover Page<br>Document Body<br>Project Requirements<br>Class Diagram<br>Wireframe Diagram |            |
+#### task allocation
+-  **Muhammad (2361648)**
+	- [ ] Navigation Maps
+	- [ ] Pseudocode
+	- [ ] Flow Charts
+- **Micheal (2411228)
+	- [ ] Prototype
+	- [ ] Use Case Diagrams
+	- [ ] Usability
+- **Gedas (2410684)**
+	- [ ] Cover Page
+	- [ ] Document Body
+	- [x] Project requirements
+	- [ ] Class Diagram
+	- [ ] Wireframe Diagram
 #### task list
 ***highlighted*** entries are mandatory, **others** are optional.
 
-| task                        | requirements / notes                                                                                                     | member | status |
-| --------------------------- | :----------------------------------------------------------------------------------------------------------------------- | ------ | ------ |
-| ***cover page***            | 1. has to contain SIDs.<br>2. file name contains SID.                                                                    |        |        |
-| ***document / formatting*** | 1. ~~has to be a MS Word document.~~ unclear, ask prof. Mahmud. PDF is probably OK.<br>2. table of contents and figures. |        |        |
-| ***presentation slides***   |                                                                                                                          |        |        |
-| ***project requirements***  |                                                                                                                          | g      |        |
-| ***class diagram***         |                                                                                                                          | g      |        |
-| **wireframe diagram**       |                                                                                                                          | g      |        |
-| **prototype**               |                                                                                                                          | m      |        |
-| **use case diagrams**       |                                                                                                                          | m      |        |
-| **usability**               |                                                                                                                          | m      |        |
-| **navigation maps**         |                                                                                                                          | u      |        |
-| ***pseudocode***            |                                                                                                                          | u      |        |
-| **flow charts**             |                                                                                                                          | u      |        |
+| task                             | requirements / notes                                                                                                                                                                                          | member | status |
+| -------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ | ------ |
+| ***cover page***                 | 1. has to contain SIDs **only** - no names included for anonymity.<br>2. file name contains SID.                                                                                                              | g      |        |
+| ***document body / formatting*** | 1. ~~has to be a MS Word document.~~ can be a PDF document (~~markdown exported as PDF,~~ or LaTeX document).<br>2. introduction<br>3. table of contents and figures.<br>4. reference page.<br>5. evaluation. | g      |        |
+| ***presentation slides***        |                                                                                                                                                                                                               |        |        |
+| ***project requirements***       |                                                                                                                                                                                                               | g      |        |
+| ***class diagram***              | 6                                                                                                                                                                                                             | g      |        |
+| **wireframe diagram**            | 1                                                                                                                                                                                                             | g      |        |
+| **prototype**                    | 8                                                                                                                                                                                                             | m      |        |
+| **use case diagrams**            | 2                                                                                                                                                                                                             | m      |        |
+| **usability**                    | 7                                                                                                                                                                                                             | m      |        |
+| **navigation maps**              | 3                                                                                                                                                                                                             | u      |        |
+| ***pseudocode***                 | 5                                                                                                                                                                                                             | u      |        |
+| **flow charts**                  | 4                                                                                                                                                                                                             | u      |        |
 
 ## project requirements
 >[!info] description
@@ -181,25 +202,21 @@ Our client has requested us to design a software solution which simplifies and s
 ### functional requirements
 
 The following list is the minimum and essential requirements needed for the system to function correctly:
-1. **Job profile:** The program must allow the user to set up a job profile to use as a working environment for adding and keeping a job description and candidate resumes. The reason why we decided to implement profiles was to enable an easy way to save and resume work between multiple sessions, including adding resumes from new applicants to a previously generated ranking list without having to re-upload all of them. We have also made a reasonable assumption that the company might be hiring for multiple positions at the same time, and the user could benefit from having multiple saved job descriptions that they could later reuse without having to manage their storage themselves.
-2. **Job description data input:** The user should be able to add a job description to a job profile either through a text field as plain text, or by uploading a PDF, DOCX, or TXT file.
-3. **Job description parsing:** Because the client indicated optimisation and automation as their priorities, we have decided to use NLP to parse job descriptions to extract desired criteria for each job, instead of having the user set up their own criteria manually. This should simplify and hasten the setup of new job profiles. Parsing of job descriptions should result in a set of criteria which are then stored for each profile.
-4. **Resume data input:** The user needs to be able to upload multiple CV files in different formats (PDF, DOCX, TXT) at the same time, which are then saved on the profile and assigned an candidate ID. The resumes should be stored in case the user wants to view them, and to avoid the need of uploading them multiple times in case they need to be parsed again (e.g. if a job description is updated).
-5. **Resume data parsing:** CV files for each candidate need to have text extracted before it can be parsed into data that's usable by our data matching and ranking system. The workflow of handling resumes and job descriptions needs to include these steps to cover the file formats requested by our client: 
-	1. **Plain text extraction from CV files:**
-		1. TXT files can be read directly using Python.
-		2. PDF file extraction done via the *PyMuPDF* library - we decided to go with this choice over the PyPDF2 library which was recommended in the Live Brief because it's generally considered faster (important for scalability) and can parse data from tables (minimises data loss).
-		3. DOCX file extraction done via the *python-docx* library.
-	2. **Natural Language Processing** - Extracted text is then passed to *spaCy*, which we use for NLP processing. Processed data has to result into *entities* (e.g. `Name`, `Programming Languages`, `Company`) with assigned *attributes* (e.g. `John`, `Python`, `Google`) that are then put into *categories* (e.g. `Personal Info`, `Skills`, `Work Experience`).
-> [!info] ^^^ I might have gone into more detail than necessary here for the requirements section, but this can be moved elsewhere.
-6. **Data matching and ranking:**
-7. **Result summary display and storage:**
+2. **Job profile:** The program must allow the user to set up a job profile to use as a working environment for adding and keeping a job description and candidate resumes. The reason why we decided to implement profiles was to enable an easy way to save and resume work between multiple sessions, including adding resumes from new applicants to a previously generated ranking list without having to re-upload all of them. We have also made a reasonable assumption that the company might be hiring for multiple positions at the same time, and the user could benefit from having multiple saved job descriptions that they could later reuse without having to manage their storage themselves.
+3. **Job description data input:** The user should be able to add a job description to a job profile either through a text field as plain text, or by uploading a PDF, DOCX, or TXT file.
+4. **Job description parsing:** Because the client indicated optimisation and automation as their priorities, we have decided to use NLP to parse job descriptions to extract desired criteria for each job, instead of having the user set up their own criteria manually. This should simplify and hasten the setup of new job profiles. Parsing of job descriptions should result in a set of criteria which are then stored for each profile.
+5. **Resume data input:** The user needs to be able to upload multiple CV files in different formats (PDF, DOCX, TXT) at the same time, which are then saved on the profile and assigned an candidate ID. The resumes should be stored in case the user wants to view them, and to avoid the need of uploading them multiple times in case they need to be parsed again (e.g. if a job description is updated).
+6. **Resume data parsing:** CV files for each candidate need to have text extracted before it can be parsed into data that's usable by our data matching and ranking system. The workflow of handling resumes and job descriptions needs to include these steps to cover the file formats requested by our client: 
+	1. **Plain text extraction from CV files:** - this can be achieved by reading TXT files natively in Java, using the *Apache PDFBox* library for PDF files, and the *Apache POI* library for DOCX files. However, the *Apache Tika* library acts as a wrapper for aforementioned libraries and can detect all 3 file types and extract text from all of them using just one function.
+	2. **Natural Language Processing:** Extracted text is then passed on for processing via the *Stanford CoreNLP* library. Ultimately, processed data has to result in *entities* (e.g. `Name`, `Programming Languages`, `Company`) with assigned *attributes* (e.g. `John`, `Python`, `Google`) that are then put into *categories* (e.g. `Personal Info`, `Skills`, `Work Experience`).
+7. **Data matching and ranking:** Parsed data needs to be stored in individual JSON files and then compared to the job description JSON file that has the same structure to hold entities and attributes. The CV files are assigned a *relevance score*, the value for each match is determined by it being an exact or partial match. 
+8. **Result summary display and storage:** The program needs to be able to save data of each job profile and resume into JSON files that are encrypted using AES-256 encryption, and then accessed by the program and displayed in the GUI as a list that is ranked by the relevance score.
 ### non-functional requirements
 > additional requirements that do not affect the basic functionality of the system, but provide additional benefits.
-1. **Security:** The program must comply with the UK Data Protection Act 2018 and encrypt parsed data using AES-256 encryption using Python's `encryption.fernet` module.
-2. **Usability:** The program should have an intuitive GUI that allows the user to easily set up job descriptions, upload CV files and view ranked summaries. We decided to implement a GUI is to avoid users having to familiarise and remember terminal commands, which is less intuitive and slower than a very basic GUI. This should improve the speed of resume screening further, which is one of the main stated goals of the client.
+9. **Security:** Because TrackGenesis is a Scotland based company, and due to the nature of data being gathered and processed by the program, we have made the assumption that it should be compliant with the *UK GDPR 2023* and encrypt parsed data before it is stored. Therefore we decided to implement *AES-256* encryption using Java Cryptography Architecture (JCA) as it provides an easily accessible built-in way to encrypt the JSON data (Oracle, 2025).
+10. **Usability:** The program should have an intuitive GUI that allows the user to easily set up job descriptions, upload CV files and view ranked summaries. We decided to implement a GUI is to avoid users having to familiarise and remember terminal commands, which is less intuitive and slower than a very basic GUI. This should improve the speed of resume screening further, which is one of the main stated goals of the client.
 > [!warning] the live brief states that a GUI isn't mandatory, but I suggest we design it anyway - the whole idea of the software is to make the process easier and quicker for users, and typing out commands into a terminal is the opposite.
-3. **Scalability:** 
+11. **Scalability and performance:** The user should be able to upload a large amount of complex CV files at the same time and not experience a major slowdown in data processing. Already processed data should be saved on the job profile and not processed repeatedly if additional CVs need to be uploaded. The data should be well organised and presented in a way that's intuitive and easy to navigate.
 ## project design solution
 
 > [!info] description
@@ -207,17 +224,64 @@ The following list is the minimum and essential requirements needed for the syst
 >
 >You **must** include appropriate pseudocode and class diagram to test your solution
 
+### prototype
+>[!tip] look into [Figma](https://www.figma.com) as an easy tool for designing the UI layout.
+
+>[!tip] our program is pretty straight-forward and most complicated stuff happens in the back-end, we probably need only these screens:
+> 1. main screen to select or create a new Job Profile.
+> 2. job profile screen with "upload job description" and "upload CVs" buttons, then immediately below that we can have the ranked list of applicants.
+
+### flow chart
+
 ## evaluation
 
 > [!info] description
-> Evaluate your design solution based on the principles covered in the lectures.
+> Evaluate your design solution based on the principles covered in the lectures. 
+> talk about any challenges you've faced and how you overcame them (e.g. time).
 
+One part of designing the project, which presented a significant challenge, was selecting the correct tools for our purposes, primarily the Java libraries required for extracting raw text from resumes and then parsing the data via NLP. 
+
+At first we were looking into the recommendations presented to us via the Live Brief, which included some Python libraries. After doing some research into those, we were informed that despite the Live Brief, we were required to use Java exclusively. This was a slight setback for us, but it simulated a very real possibility of requirements changing mid-project and shows the importance of careful requirements gathering.
+
+Our Client emphasised efficiency and automation as a requirement, so we needed to pick Java libraries that were fast, accurate and able to process a large number of complex resumes. Plain text extraction from common file formats like PDF and DOCX is quite straightforward and fast, so we went with Apache Tika as recommended in the Live Brief. However, the NLP solution required more consideration. After doing some research, we have decided to use Stanford CoreNLP as recommended in the Live Brief. OpenNLP would offer easy integration with Tika (both developed by the Apache Software Foundation), however, multiple sources regard CoreNLP as the faster and more accurate libraries according to their benchmarks (Schmitt, et al., 2019; Nanavati and Ghodasara, 2015). Having gone through these considerations we are therefore confident in our choice of tools for the purposes of this program.
 ## references
 
 > [!info] description
 > References must be in the correct .[“ARU Harvard” referencing system](https://library.aru.ac.uk/referencing/harvard.htm).
+> - [ ] sort all items alphabetically by author, then by date ascending.
+> - [x] add references for Stanford CoreNLP
+
+Oracle, 2025. *Java Platform, Standard Edition Security Developer’s Guide, Release 11.* [online] Available at:
+<https://docs.oracle.com/en/java/javase/11/security/java-cryptography-architecture-jca-reference-guide.html> [Accessed 16 February 2025]
+
+Apache Software Foundation, 2025. *Apache Tika 3.1.0 Documentation.* [online] Available at:
+<https://tika.apache.org/3.1.0/index.html> [Accessed 16 February 2025]
+
+*United Kingdom General Data Protection Regulation 2023 (Art. 32.1.a)* [online] Available at:
+<https://www.legislation.gov.uk/eur/2016/679?view=plain> [Accessed 16 February 2025]
+
+Nanavati, J. and Ghodasara, Y., 2015. *A Comparative Study of Stanford NLP and Apache Open NLP in the view of POS Tagging.* [pdf] Available at:
+<https://www.ijsce.org/wp-content/uploads/papers/v5i5/E2744115515.pdf> [Accessed 14 February 2025]
+
+Schmitt, X., Kubler, S., Robert, J., Papadakis, M. and LeTraon, Y., 2019. *A Replicable Comparison Study of NER Software: StanfordNLP, NLTK, OpenNLP, SpaCy, Gate.* [online] Available at:
+<https://www.researchgate.net/publication/337977695_A_Replicable_Comparison_Study_of_NER_Software_StanfordNLP_NLTK_OpenNLP_SpaCy_Gate> [Accessed 14 February 2025]
 
 ## presentation / slides
 
 > [!info] description
 > There should be no more than 10 slides (e.g., Front slide mentioning project title, and group members name and ID, Presentation outline, individual contributions- at least 1 slide for the team member and finally a concluding slide- thank you! slide)
+
+>[!warning] the slides need to be submitted to Canvas before 28/2, presentations will take place on 3/3 during the practice session.
+
+> [!note] do not include the entire flow chart / class chart, only the minimum amount needed to explain the system and get the point across. do not overload the slides with images and text.
+
+
+# group project additional info
+## 010-1: group project - proposal
+> [!warning] deadline is 28/2.
+- word count actually doesn't matter as long as it's not overly short.
+- 
+## 010-2: solo project - implementation
+> [!warning] deadline is 28/3.
+- prof. Mahmud drop-in 1-to-1 sessions are on Fridays at 9AM. 
+- can deviate from the proposal part drastically.
