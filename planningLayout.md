@@ -141,38 +141,38 @@ Feedback will be provided on Canvas and you will be able to view this feedback a
 ## document body and formatting (not a chapter)
 >[!info] requirements:
 > - [x] needs to be a PDF file formatted properly (ideally a $LaTeX$ file, but markdown will do just fine.)
-> - [ ] cover page.
-> - [ ] ARU logo
-> - [ ] watermark?
+> - [x] cover page.
+> - [x] ARU logo
+> - [x] watermark?
 > - [x] table of contents.
 > - [x] page numbering.
-> - [ ] reference page.
+> - [x] reference page.
 
 ## task allocation list
 >[!info] description
 >A table containing the SID number of each student with an indication of which sections of the project design each student completed must be included.
 #### final table format
 
-| team member<br>*(delete this later)* | SID     | tasks                                                                                     | completed? |
-| ------------------------------------ | ------- | ----------------------------------------------------------------------------------------- | ---------- |
-| **Muhammad**                         | 2361648 | Navigation Maps<br>Pseudocode<br>Flow Charts                                              |            |
-| **Micheal**                          | 2411228 | Prototype<br>Use Case Diagrams<br>Usability                                               |            |
-| **Gedas**                            | 2410684 | Cover Page<br>Document Body<br>Project Requirements<br>Class Diagram<br>Wireframe Diagram |            |
+| team member<br>*(delete this later)* | SID     | tasks                                                                                             | completed?                      |
+| ------------------------------------ | ------- | ------------------------------------------------------------------------------------------------- | ------------------------------- |
+| **Muhammad**                         | 2361648 | Navigation Maps<br>Pseudocode<br>Flow Charts                                                      | Yes<br>Yes<br>Yes               |
+| **Micheal**                          | 2411228 | Prototype<br>Use Case Diagrams<br>Usability                                                       | <br>Yes<br>Yes                  |
+| **Gedas**                            | 2410684 | Requirements Gathering<br>Report Compilation<br>Class Diagram<br>Wireframe Diagrams<br>Evaluation | Yes<br>Yes<br>Yes<br>Yes<br>Yes |
 #### task allocation
 -  **Muhammad (2361648)**
-	- [ ] Navigation Maps
-	- [ ] Pseudocode
+	- [x] Navigation Maps
+	- [x] Pseudocode
 	- [ ] Flow Charts
 - **Micheal (2411228)**
 	- [ ] Prototype
-	- [ ] Use Case Diagrams
-	- [ ] Usability
+	- [x] Use Case Diagrams
+	- [x] Usability
 - **Gedas (2410684)**
-	- [ ] Cover Page
+	- [x] Cover Page
 	- [ ] Document Body
-	- [x] Project requirements
-	- [ ] Class Diagram
-	- [ ] Wireframe Diagram
+	- [x] Requirements gathering
+	- [x] Class Diagram
+	- [x] Wireframe Diagram
 #### task list
 ***highlighted*** entries are mandatory, **others** are optional.
 

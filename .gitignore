@@ -1,0 +1,6 @@
+/CVA/test.puml
+/CVA/test2.puml
+.gitignore
+/wireframeDiagram/*.bkp
+*.bkp
+/extraStuff/CV_Analyzer_Pseudocode_old.docx

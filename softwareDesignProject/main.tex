@@ -1,0 +1,113 @@
+%an unofficial template for an assignment report by Gedas Keturakis for Anglia Ruskin university.
+
+%change paper page size and font size, leave class as report.
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[light,math]{iwona}
+\usepackage[T1]{fontenc}
+%\usepackage{fontspec} %comment lines 6&7, and uncomment lines 8&9 to use a dyslexia-friendly font.
+%\setmainfont{OpenDyslexic}
+\usepackage[utf8]{inputenc} %UTF-8 encoding.
+\usepackage{setspace}
+\doublespacing %2.0 line spacing option.
+%\onehalfspacing %1.5 line spacing option.
+\usepackage[a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm]{geometry}
+
+\usepackage{lipsum} %lorem ipsum generator.
+
+\usepackage{listings} %code blocks.
+\usepackage{xcolor} %custom code block colours.
+\usepackage{tcolorbox} %nicer code blocks.
+\lstdefinelanguage{pseudocode}{
+    morekeywords={Function, For, Do, Return, End, If, Then, Else If, End If, Prompt, Case, Switch, Exit, While, Do, End Function},
+    sensitive=false,
+    morecomment=[l]{//},
+    morestring=[b]"
+}
+
+\definecolor{keyword}{RGB}{97, 175, 239} % Keywords (blue)
+\definecolor{string}{RGB}{152, 195, 121} % Strings (green)
+\definecolor{number}{RGB}{209, 154, 102} % Numbers (orange)
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{black},
+    basicstyle=\ttfamily\small\color{white}
+    commentstyle=\ttfamily\small\color{number}\itshape,
+    keywordstyle=\color{keyword}\bfseries,
+    stringstyle=\color{string},
+    numberstyle=\tiny\color{number},
+    numbers=left,
+    numbersep=10pt,
+    breaklines=false,
+    showstringspaces=false,
+    frame=none,
+    tabsize=4
+}
+\lstset{style=mystyle}
+
+
+\usepackage{graphicx} %images.
+\usepackage{float} %better image placement.
+\usepackage{transparent} %opacity.
+\usepackage{everypage}
+\usepackage{eso-pic} %for watermark logo.
+\usepackage{caption} %image captions.
+\usepackage{subcaption} %subfigures.
+%\usepackage{svg} %SVG support, if needed for logo.
+\graphicspath{ {img/} }
+
+\definecolor{linkblue}{RGB}{93, 82, 100}
+\usepackage[colorlinks=true, linkcolor=linkblue, urlcolor=blue, citecolor=linkblue]{hyperref} %clickable TOC
+\usepackage[nottoc]{tocbibind} %table of contents extras, [nottoc] prevents TOC from appearing in TOC.
+\usepackage{fancyhdr} %header & footer extras.
+\usepackage{afterpage} %control where page numbering starts.
+
+\usepackage{makecell}
+
+\usepackage[backend=biber,style=authoryear,sorting=nyt,maxcitenames=2,maxbibnames=99]{biblatex} %Harward style referencing.
+\addbibresource{references.bib} %reference file.
+
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]
+    {\normalfont\LARGE\bfseries} %title style = large and bold.
+    {\thechapter.} %chapter number before the title.
+    {1em} %space between chapter number and title.
+    {}
+\titlespacing*{\chapter}
+    {0pt} %indentation = 0.
+    {-20pt} %space above title.
+    {20pt} %space below title.
+
+\title{Anglia Ruskin Project Template}
+\author{Gedas Keturakis}
+\date{\today}
+
+\AddEverypageHook{
+    \put(170,-730){
+        \transparent{0.05}
+        \includegraphics[width=0.5\paperwidth]{img/ARUCrane.pdf}
+    }
+}
+
+\begin{document}
+
+\include{chapters/titlePage}
+
+\pagenumbering{gobble}
+\tableofcontents
+\afterpage{\pagenumbering{arabic}}
+
+%in the 'report' class, \chapter{} is the highest level, followed by \section{}.
+
+\include{chapters/taskList}
+
+\include{chapters/requirements}
+
+\include{chapters/designSolution}
+
+\include{chapters/evaluation}
+
+\printbibliography[heading=bibintoc, title={Reference List}]
+
+\end{document}
+

@@ -1,0 +1,116 @@
+@startuml
+!pragma layout smetana
+
+
+class EncryptionManager {
+  - encryptionKey: String
+  + encryptData(data: String): String
+  + decryptData(encryptedData: String): String
+}
+
+class JSONManager {
+  - dir: String
+  + writeJSON(data: Object): void
+  + readJSON(fileName: String): Object
+}
+class UserInterface {
+  + displayEditProfile(): void
+  + displayProfile(profileID: String): void
+  + displayCV(cvID: String): void
+}
+
+class ProfileManager {
+  - profiles: List<Profile>
+  + createProfile(): void
+  + loadProfile(): void
+  + deleteProfile(): void
+  + processProfile(profile: Profile): void
+}
+note right of ProfileManager
+- processProfile method is called when
+  a new profile is created or edited.
+- calls the function from the Profile class
+  at a higher level.
+end note
+
+class Ranker {
+  - cvScores: Map<CV, Integer>
+  + calculateRelevanceScore(cv: CV, criteriaMap: Map<String, String>): int
+  + rankCVs(cvs: List<CV>, criteriaMap: Map<String, String>): List<CV>
+}
+
+class Profile {
+  - profileID: String
+  - profileTitle: String
+  - profileDescription: String
+  - cvs: List<CV>
+  - criteriaMap: Map<String, String>
+  + addCV(cv: CV): void
+  + removeCV(cv: CV): void
+  + updateCriteria(newCriteria: Map<String, String>): void
+  + processProfile(): void
+}
+note left of Profile
+- processProfile method encapsulates
+  JSONManager.writeJSON, CV.parseCV,
+  Ranker.rankCVs & Ranker.calculateRelevanceScore.
+- called after a profile is updated with new CVs,
+  description or title.
+end note
+
+class CV {
+  - cvID: String
+  - name: String
+  - filePath: String
+  - parsedData: Map<String, String>
+  - relevanceScore: int
+  + parseCV(): void
+  + updateRelevanceScore(newScore: int): void
+}
+
+
+class FileParser {
+  - filePath: String
+  - textParser: ApacheTika
+  + extractText(): String
+  + isSupportedFormat(): boolean
+}
+
+class NLPProcessor {
+  - pipeline: StanfordCoreNLP
+  + extractEntities(text: String): Map<String, String>
+  + extractCriteria(profileDescription: String): Map<String, String>
+}
+
+class PDFParser {
+  + extractText(): String
+}
+
+class DOCXParser {
+  + extractText(): String
+}
+
+class TXTParser {
+  + extractText(): String
+}
+
+'==================================================
+' Define relationships:
+ProfileManager "1    " --> "many" Profile
+Profile "1" --> "many   " CV
+' Profile uses FileParser and NLPProcessor during processing
+Profile ..> FileParser : uses
+Profile ..> NLPProcessor : uses
+' Also, Profile uses Ranker to rank its CVs (dependency)
+Profile ..> Ranker : uses
+' CV depends on FileParser and NLPProcessor as well
+CV ..> FileParser : uses
+CV ..> NLPProcessor : uses
+FileParser <|-- PDFParser
+FileParser <|-- DOCXParser
+FileParser <|-- TXTParser
+JSONManager "1" --> "many     " Profile
+UserInterface "1 " --> "  1" ProfileManager
+EncryptionManager "1 " --> "1  " JSONManager
+
+@enduml

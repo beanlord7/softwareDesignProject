@@ -1,0 +1,37 @@
+@startuml
+!pragma layout smetana
+actor Recruiter
+
+rectangle "CV Analyser" {
+  usecase "Upload Resume" as UC1
+  usecase "Upload Job Description" as UC2
+  usecase "Parse Job Description" as UC3
+  usecase "Extract Resume Information" as UC4
+  usecase "Match Resume with Job Description" as UC5
+  usecase "Rank Candidates" as UC6
+  usecase "View Ranked CVs" as UC7
+  usecase "View Resume/CV" as UC8
+  usecase "Filter Candidates by Skills" as UC9
+  usecase "Filter Candidates by Experience" as UC10
+  usecase "Filter Candidates by Education" as UC11
+  usecase "Compare Resumes" as UC12
+  usecase "Exit System" as UC13
+
+  UC1 --> UC4 : <<include>>  // Uploading a resume always extracts information
+  UC2 --> UC3 : <<include>>  // Inputting a job description always triggers parsing
+  UC4 --> UC5 : <<include>>  // Extracted resume info is required for matching
+  UC5 --> UC6 : <<include>>  // Matching must happen before ranking
+  UC6 --> UC7 : <<include>>  // Ranking must happen before displaying results
+  UC7 --> UC8 : <<include>>  // Displaying results always includes resume viewing
+}
+
+Recruiter --> UC1
+Recruiter --> UC2
+Recruiter --> UC7
+UC7 --> UC9
+UC7 --> UC10
+UC7 --> UC11
+Recruiter --> UC12
+Recruiter --> UC13
+
+@enduml
